@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pseudovelo"
+version = "0.1.0"
+description = "A brief description of your pseudovelo package"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "BSD-3-Clause"}
+
+dependencies = [
+    "scipy",
+    "numpy",
+    "matplotlib",
+    "statsmodels",
+    "joblib",
+    "anndata",
+    "pandas",
+    "scvelo"
+]
