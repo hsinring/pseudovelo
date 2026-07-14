@@ -1,6 +1,6 @@
-## PseudoVelo - Inferring transcriptomic velocity directly from pseudotime.
+## PseudoVelo: Inferring gene expression derivatives along pseudotime as pseudo-velocity.
 
-**PseudoVelo** is a computational framework that infers transcriptomic velocity directly from pseudotime. PseudoVelo utilizes Generalized Additive Models (GAMs) to fit gene expression dynamics and employs a central difference approximation to calculate the instantaneous rate of change for each gene. This straightforward yet effective approach directly yields a transcriptomic velocity matrix that is fully compatible with existing downstream single-cell workflows.
+**PseudoVelo** is a computational framework that infers pseudo-velocity directly from pseudotime. PseudoVelo utilizes Generalized Additive Models (GAMs) to fit gene expression dynamics and employs a central difference approximation to calculate the instantaneous rate of change for each gene. This straightforward yet effective approach directly yields a pseudo-velocity matrix that is fully compatible with existing downstream single-cell workflows.
 
 ### Installation
 You can install PseudoVelo directly from GitHub using pip. Since it requires Python 3.9 or higher, please ensure your environment meets this requirement:
