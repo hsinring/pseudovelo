@@ -31,12 +31,12 @@ pv.fit_nb_gam_with_center_diff(
     adata,
     J_key="dpt_pseudotime",    # Key for pseudotime in adata.obs
     n_jobs=10,                 # Number of parallel jobs
-    cluster_key="lineages",    # Key for cell lineages/clusters in adata.obs
+    cluster_key="lineages",    # Key for cell lineages/clusters in adata.obs (default: None for unbranched)
     input_layer="X",           # Layer to use for fitting
     reverse=False
 )
 
-# 4. Plot velocity projection
+# 4. Plot pseudo-velocity projection
 # Visualize the inferred velocity streamlines or arrows
 pv.plot_velocity_projection(
     adata,
