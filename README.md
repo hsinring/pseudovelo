@@ -25,7 +25,7 @@ adata = sc.read_h5ad("your_data.h5ad")
 # Note: The layer doesn't have to be "X", it can also be "Ms" or other layers depending on your workflow.
 adata.layers["X"] = adata.X.toarray()
 
-# 3. Fit GAM and calculate transcriptomic velocity
+# 3. Fit GAM and calculate pseudo_velocity
 # This step fits the Negative Binomial GAMs and computes the central difference
 pv.fit_nb_gam_with_center_diff(
     adata,
@@ -41,23 +41,10 @@ pv.fit_nb_gam_with_center_diff(
 pv.plot_velocity_projection(
     adata,
     xkey="X",                  # Basis/Embedding key for projection (e.g., 'X_umap')
-    vkey="gam_nb_dmu_dJ",      # Key where the calculated velocity is stored
+    vkey="pseudo_velocity",      # Key where the calculated pseudo_velocity is stored
     color="lineages"           # Color cells by lineage/cluster
 )
 
-# 5. Plot GAM fitting for specific genes
-# Visualize the gene expression dynamics along pseudotime
-pv.plot_gam_fit(
-    adata,
-    J_key="dpt_pseudotime",
-    mu_layer="gam_nb_mu",
-    input_layer="X",
-    cluster_key="lineages",
-    gene_list=["XXX"],         # List of genes to plot
-    figsize=(4, 2.5),
-    fontsize=12,
-    xlabel="Diffusion pseudotime"
-)
 ```
 
 
