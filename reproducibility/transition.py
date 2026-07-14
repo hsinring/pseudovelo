@@ -32,7 +32,7 @@ def normalize(X):
 
 def transition_matrix(
     adata,
-    vkey="gam_nb_dmu_dJ",
+    vkey="pseudo_velocity",
     backward=False,
     self_transitions=True,
     scale=10,
@@ -98,7 +98,7 @@ def evaluate_transition_accuracy(
     adata,
     cluster_key: str,
     lineage_order: list,
-    vkey: str = "gam_nb_dmu_dJ",
+    vkey: str = "pseudo_velocity",
     T=None,
 ):
     if T is None:
@@ -175,7 +175,7 @@ def evaluate_transition_accuracy(
 
 
 
-def projection_consistency(adata, embedding_key='X_umap', vkey='gam_nb_dmu_dJ',
+def projection_consistency(adata, embedding_key='X_umap', vkey='pseudo_velocity',
                            conn_key='connectivities', obsm_key='expected_velos', l2_norm=False, T_velo=None):
     
     X_emb = adata.obsm[embedding_key]
@@ -214,7 +214,7 @@ def projection_consistency(adata, embedding_key='X_umap', vkey='gam_nb_dmu_dJ',
         
     return consistency
 
-def cross_projection_consistency(adata1, adata2=None, embedding_key='X_umap', vkey='gam_nb_dmu_dJ', 
+def cross_projection_consistency(adata1, adata2=None, embedding_key='X_umap', vkey='pseudo_velocity', 
                                  l2_norm=False, T_velo1=None, T_velo2=None):
     
     X_emb = adata1.obsm[embedding_key]
